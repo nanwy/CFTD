@@ -1,0 +1,332 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 1220px;
+}
+
+@font-face {
+  font-family: electronicFont;
+  src: url("./assets/fonts/DS-DIGIT.TTF");
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+video {
+  position: fixed;
+  z-index: -100;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.border_head {
+  width: 100%;
+  margin: 8px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #bbbbbb;
+}
+
+.border_head .border_head_number {
+  font-family: electronicFont;
+  color: #f28523;
+  font-size: 50px;
+  padding: 0 4px;
+}
+
+.border_head .border_head_go_link {
+  margin-left: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-right: 140px;
+}
+.border_head .border_head_go_link a {
+  color: #f28523;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .calendar_line {
+  width: 21%;
+}
+.container .calendar_line_container {
+  position: relative;
+}
+.container .calendar_line .calendar_line_list {
+  padding: 0 0 0 55%;
+}
+
+.container .calendar_line_list::before {
+  position: absolute;
+  content: "";
+  z-index: -3;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+  width: 1px;
+  background-color: #ff7800;
+}
+
+.container .calendar_line_list::after {
+  position: absolute;
+  content: "";
+  z-index: -2;
+  top: 0px;
+  right: 0;
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  border: 3px solid #ff7800;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* .container .calendar_line_container::before {
+  position: absolute;
+  content: "";
+  z-index: -2;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  border-style: solid;
+  border-width: 10px 0 15px;
+  border-color: #1a136b;
+  background-color: transparent;
+} */
+.container .calendar_line .calendar_line_year {
+  position: relative;
+  line-height: 32px;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+  padding-right: 40px;
+  text-align: right;
+}
+
+.container .calendar_line .calendar_line_year::before,
+.container .calendar_line .calendar_line_year::after,
+.container .calendar_line .calendar_line_month::after {
+  position: absolute;
+  content: "";
+}
+
+.container .calendar_line .calendar_line_year::before {
+  width: 2px;
+  right: 15px;
+  top: 5px;
+  height: 10px;
+  background: #ff7800;
+}
+.container .calendar_line .calendar_line_year::after {
+  width: 2px;
+  right: 15px;
+  top: 8px;
+  height: 7px;
+  background: #ff7800;
+}
+
+.container .calendar_line .calendar_line_month {
+  position: relative;
+  line-height: 46px;
+  font-size: 14px;
+  color: #bbbbbb;
+  cursor: pointer;
+  text-align: right;
+  padding-right: 40px;
+}
+
+.title {
+  display: block;
+  width: auto;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url("./assets/images/newbanner.jpg");
+  background-position: center;
+}
+
+.container .calendar_line .calendar_line_month::after {
+  top: 0px;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border: 6px double #ff7800;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.container .calendar_line .calendar_line_month::before,
+.container .calendar_line .calendar_line_year::before {
+}
+
+.container .calendar_line .calendar_line_year:hover::before {
+  animation: rotate 1.8s ease infinite;
+  transform-origin: 52% 95%;
+}
+.container .calendar_line .calendar_line_year:hover::after {
+  animation: rotate 1.8s 0.3s ease infinite;
+  transform-origin: 52% 95%;
+}
+.container .calendar_line .calendar_line_month:hover {
+  color: #ff7800;
+}
+.container .calendar_line .active {
+  color: #ff7800;
+  font-weight: bold;
+}
+
+.container .contest_list {
+  width: 74%;
+}
+
+.container .contest_list li {
+  margin-bottom: 15px;
+}
+.container .contest_detail .contest_img {
+}
+
+.container .contest_detail .contest_img .contest_img_detail {
+  position: relative;
+  width: 248px;
+
+  height: 152px;
+}
+
+.container .contest_detail .contest_img .contest_img_detail .contest_status {
+  content: "";
+  background-image: url("./assets/images/jszticon.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65px;
+  height: 65px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 0;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+.contest_detail {
+  display: flex;
+}
+
+.container h2 {
+  margin-bottom: 12px;
+  line-height: 22px;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: bolder;
+}
+
+.container .contest_list li h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container .contest_text {
+  width: 621px;
+  margin-left: 20px;
+}
+
+.container .contest_text h3 span {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(196, 192, 192);
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: 14%;
+  width: 100%;
+  border-top: 1px solid #4d515a;
+  padding: 8px 0;
+  background-color: #2c2f34;
+}
+
+.footer a {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-orange {
+  display: inline-block;
+  min-width: 97px;
+  height: 32px;
+  padding: 0 22px;
+  line-height: 32px;
+  vertical-align: top;
+  background-color: #ff7800;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #fff;
+}
+
+.btn-more {
+  margin-top: 10px;
+  margin-left: 50%;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body label,
+body dt,
+body strong,
+body b {
+  font-weight: normal;
+  margin: 0;
+}
+
+body button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
